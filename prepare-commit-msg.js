@@ -1,7 +1,7 @@
 #!/usr/bin/env babel-node
 
-const {writeFileSync} = require('fs');
-const {get} = require('request');
+import {readFileSync, writeFileSync} from 'fs';
+import {get} from 'request';
 
 const {PIVOTAL_TOKEN, PIVOTAL_INITIALS, PIVOTAL_PROJECTID} = process.env;
 
@@ -10,6 +10,11 @@ const {PIVOTAL_TOKEN, PIVOTAL_INITIALS, PIVOTAL_PROJECTID} = process.env;
     throw new Error('Environment variables missing. Please folow the instructions in the README.md');
   }
 });
+
+var commitFile = process.argv[2];
+
+// read contents from the commit file
+var initialContents = readFileSync(commitFile).toString();
 
 let pivotalBase = 'https://www.pivotaltracker.com';
 let pivotalPath = '/services/v5/projects/' + PIVOTAL_PROJECTID + '/stories';
@@ -32,10 +37,10 @@ get({
 # [Finishes # ${item.id}]`;
   });
 
-  var contents = "\n\n" + json.join("\n\n# ---\n\n");
+  var contents = json.join("\n\n\n");
 
   // write contents back out to .git/COMMIT_EDITMSG
-  writeFileSync(process.argv[2], contents);
+  writeFileSync(commitFile, initialContents + contents);
 
   process.exit(0);
 
