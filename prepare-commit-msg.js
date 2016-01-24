@@ -12,6 +12,13 @@ const {PIVOTAL_TOKEN, PIVOTAL_INITIALS, PIVOTAL_PROJECTID} = process.env;
 });
 
 var commitFile = process.argv[2];
+var message = process.argv[3];
+
+// If a message is already found it just goes through
+// activated with a commit -m "" type of command
+if(message) {
+  process.exit(0);
+}
 
 // read contents from the commit file
 var initialContents = readFileSync(commitFile).toString();
