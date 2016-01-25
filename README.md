@@ -5,7 +5,7 @@ of a story started in Pivotal Tracker.
 
 ## Install
 
-1. Install [babel](https://babeljs.io) `npm install -g babel`
+1. Install [babel-cli](https://babeljs.io) `npm install -g babel-cli`
 
 2. Clone the repository
 
