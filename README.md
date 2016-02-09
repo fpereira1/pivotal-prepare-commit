@@ -5,11 +5,11 @@ of a story started in Pivotal Tracker.
 
 ## Install
 
-1. Install [babel-cli](https://babeljs.io) `npm install -g babel-cli`
+1. Clone the repository
 
-2. Clone the repository
+2. `npm install` on the project
 
-3. `npm install` on the project
+3. Run the build step `npm run build`
 
 Setup the necessary environment variables:
 

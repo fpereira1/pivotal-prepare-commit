@@ -1,4 +1,4 @@
-#!/usr/bin/env babel-node
+#!/usr/bin/env node
 
 import {readFileSync, writeFileSync} from 'fs';
 import {get} from 'request';
