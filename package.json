@@ -11,7 +11,7 @@
   "author": "Filype Pereira <pereira.filiype@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "request": "^2.67.0"
+    "request": "^2.80.0"
   },
   "devDependencies": {
     "babel-cli": "^6.5.1",
